@@ -1,0 +1,34 @@
+// TERMINAL PROMPTS TAKEN
+
+(done) python --version 
+    Python 3.13.14
+
+(done) python -m venv venv
+
+(done (from copilot)) (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& c:\Users\user\Documents\vscode\SIA-Project1\venv\Scripts\Activate.ps1)
+
+(done) python -m pip install Flask
+    (done) python.exe -m pip install --upgrade pip
+
+(done) python -m flask --version
+    Python 3.13.14
+    Flask 3.1.3
+    Werkzeug 3.1.8
+
+(done) python -m pip install pandas joblib scikit-learn==1.6.1
+    Successfully installed: 
+        cloudpickle-3.1.2 
+        joblib-1.6.0 
+        narwhals-2.25.0 
+        numpy-2.5.2 
+        pandas-3.0.5 
+        python-dateutil-2.9.0.post0 
+        scikit-learn-1.9.0 
+        scipy-1.18.1 
+        six-1.17.0 
+        threadpoolctl-3.6.0 
+        tzdata-2026.3
+
+python -c "import pandas, sklearn, joblib; print('Machine-learning libraries are ready.')"
+
+python -c "import joblib; model=joblib.load('models/svm_pipeline.pkl'); print('Model type:', type(model)); print('Expected columns:', getattr(model, 'feature_names_in_', 'Not available')); print(model)"

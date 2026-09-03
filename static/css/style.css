@@ -1,0 +1,146 @@
+/* General page design */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+}
+
+
+/* Main application container */
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+/* Main heading */
+h1 {
+    margin-top: 0;
+    color: #1d4ed8;
+}
+
+
+/* General paragraph design */
+p {
+    color: #555555;
+    line-height: 1.5;
+}
+
+
+/* Form field container */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+/* Form labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333333;
+    font-weight: bold;
+}
+
+
+/* Dropdown fields */
+select {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: white;
+    color: #333333;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Dropdown focus design */
+select:focus {
+    border-color: #1d4ed8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+
+/* Predict button */
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1d4ed8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Predict button hover effect */
+button:hover {
+    background-color: #1e40af;
+}
+
+
+/* Predict button click effect */
+button:active {
+    transform: scale(0.99);
+}
+
+
+/* Prediction result area */
+.result-container {
+    min-height: 100px;
+    margin-top: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px dashed #b8c5d6;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    text-align: center;
+}
+
+
+/* Result heading */
+.result-container h2 {
+    margin-top: 0;
+    color: #334155;
+}
+
+
+/* Result message */
+.result-container p {
+    margin-bottom: 0;
+}
+
+
+/* Result area after clicking Predict */
+.result-container.active {
+    border: 2px solid #1d4ed8;
+    background-color: #eff6ff;
+}
+
+
+/* Mobile screen adjustment */
+@media (max-width: 600px) {
+    .container {
+        width: 94%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Buy Computer Prediction</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Buy Computer Prediction</h1>
+
+        <p>
+            Enter the customer information to predict whether
+            they will buy a computer.
+        </p>
+
+        <form id="prediction-form">
+
+            <div class="form-group">
+                <label for="age">Age Group</label>
+
+                <select id="age" name="age" required>
+                    <option value="" selected disabled>
+                        Select age group
+                    </option>
+
+                    <option value="&lt;=30">
+                        30 or below
+                    </option>
+
+                    <option value="31...40">
+                        31 to 40
+                    </option>
+
+                    <option value="&gt;40">
+                        Above 40
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="income">Income</label>
+
+                <select id="income" name="income" required>
+                    <option value="" selected disabled>
+                        Select income level
+                    </option>
+
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="student">Student</label>
+
+                <select id="student" name="student" required>
+                    <option value="" selected disabled>
+                        Select student status
+                    </option>
+
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="credit_rating">
+                    Credit Rating
+                </label>
+
+                <select
+                    id="credit_rating"
+                    name="credit_rating"
+                    required
+                >
+                    <option value="" selected disabled>
+                        Select credit rating
+                    </option>
+
+                    <option value="Fair">Fair</option>
+                    <option value="Excellent">Excellent</option>
+                </select>
+            </div>
+
+            <button type="submit">
+                Predict
+            </button>
+
+        </form>
+
+        <div
+            id="result-container"
+            class="result-container"
+            aria-live="polite"
+        >
+            <h2>Prediction Result</h2>
+
+            <p id="result-message">
+                Complete the form and click Predict.
+            </p>
+        </div>
+
+    </div>
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+</body>
+</html>

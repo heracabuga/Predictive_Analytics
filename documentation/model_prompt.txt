@@ -1,0 +1,117 @@
+Create a simple, beginner-friendly, and fully executable Google Colab machine-learning activity using the `buys_computer.csv` dataset.
+
+Give the answer as a properly ordered series of Google Colab code cells. Before each code cell, provide only a short and simple explanation. Do not create an `.ipynb` file. Avoid complicated functions and excessive error handling.
+
+At the beginning, include code that allows the user to select and upload the CSV file from the computer:
+
+```python
+from google.colab import files
+
+uploaded = files.upload()
+```
+
+After uploading, load the dataset using:
+
+```python
+df = pd.read_csv("buys_computer.csv")
+```
+
+Do not mount Google Drive or use a Google Drive path.
+
+The activity should:
+
+1. Import all required libraries.
+2. Allow the user to upload `buys_computer.csv`.
+3. Load and display the dataset.
+4. Remove extra spaces from column names and text values.
+5. Replace `31...10` with `31...40` in the `Age` column if that value exists.
+6. Display:
+
+   * First five rows
+   * Dataset shape
+   * Data types
+   * Missing values
+   * Number of duplicate rows
+   * Target-class distribution
+7. Remove the `Record` column because it is only an identifier.
+8. Use these predictors:
+
+   * `Age`
+   * `Income`
+   * `Student`
+   * `Credit_Rating`
+9. Use `Buys_Computer` as the target and convert:
+
+   * `No = 0`
+   * `Yes = 1`
+10. Use `OneHotEncoder`, `ColumnTransformer`, and Scikit-learn `Pipeline` so preprocessing is included in every model.
+11. Compare these algorithms:
+
+* kNN with `n_neighbors=3`
+* Logistic Regression
+* Gaussian Naive Bayes
+* Random Forest
+* SVM
+* Decision Tree
+
+12. Apply `StandardScaler` only to kNN, Logistic Regression, and SVM.
+13. Make sure Gaussian Naive Bayes receives dense numerical data.
+14. Use a stratified train-test split with `random_state=42`.
+15. Use repeated stratified cross-validation:
+
+* Use up to five folds based on the smallest target-class count.
+* Repeat the cross-validation ten times.
+
+16. Calculate:
+
+* Accuracy
+* Balanced accuracy
+* Precision
+* Recall
+* F1-score
+* ROC-AUC
+* Mean cross-validation F1-score
+* Cross-validation F1-score standard deviation
+* Confusion matrix
+* Classification report
+
+17. Display:
+
+* Model comparison table
+* Bar chart of mean cross-validation F1-scores
+* Confusion matrix for every model
+* Highest-ranked model
+
+18. Rank the models primarily by mean cross-validation F1-score.
+19. Clearly warn that the dataset is very small and the results are only for educational demonstration.
+20. At the end, allow the user to choose a model using:
+
+```python
+SELECTED_MODEL = "Random Forest"
+```
+
+21. Train the selected complete pipeline using the entire dataset.
+22. Save the complete trained pipeline as a `.pkl` file using Joblib.
+23. Test the trained pipeline using:
+
+```python
+sample_input = pd.DataFrame([{
+    "Age": "<=30",
+    "Income": "High",
+    "Student": "No",
+    "Credit_Rating": "Fair"
+}])
+```
+
+24. Display:
+
+* Numerical prediction (`0` or `1`)
+* Text prediction (`No` or `Yes`)
+* Probability of `Yes`
+
+25. Automatically download the saved `.pkl` file using `files.download()`.
+
+Keep every code cell simple, readable, and executable in order from beginning to end. Do not hard-code any evaluation results.
+
+
+https://colab.research.google.com/drive/1X0TFGmD5goUkhRXT3m8Ry2yofzx1RyH3?usp=sharing
