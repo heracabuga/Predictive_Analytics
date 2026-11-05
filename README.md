@@ -12,6 +12,16 @@ The project is designed around a machine-learning workflow in Google Colab and a
 Flask web interface for submitting predictions. The model target is
 `Buys_Computer`, encoded as `0` (`No`) or `1` (`Yes`).
 
+## To Run
+In terminal, run:
+
+python --version  
+python -m venv venv  
+.\venv\Scripts\activate  
+python -m pip install Flask  
+python -m flask --version   
+python -m pip install pandas joblib scikit-learn==1.6.1  
+
 
 ## Repository structure
 

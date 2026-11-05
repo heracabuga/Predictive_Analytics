@@ -1,146 +1,256 @@
-/* General page design */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
+    background: #ffffff;
+    color: #292929;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
-
-/* Main application container */
-.container {
-    width: 90%;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/* Header */
+.header {
+    height: 70px;
+    border-bottom: 1px solid #6db58a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0 80px;
+    font-size: 22px;
+    letter-spacing: 0.3px;
 }
 
-
-/* Main heading */
-h1 {
-    margin-top: 0;
-    color: #1d4ed8;
-}
-
-
-/* General paragraph design */
-p {
-    color: #555555;
-    line-height: 1.5;
-}
-
-
-/* Form field container */
-.form-group {
-    margin-bottom: 20px;
+.header-left {
     text-align: left;
 }
 
-
-/* Form labels */
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333333;
-    font-weight: bold;
-}
-
-
-/* Dropdown fields */
-select {
-    width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-    border: 1px solid #cccccc;
-    border-radius: 6px;
-    background-color: white;
-    color: #333333;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-
-/* Dropdown focus design */
-select:focus {
-    border-color: #1d4ed8;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
-}
-
-
-/* Predict button */
-button {
-    width: 100%;
-    padding: 13px;
-    border: none;
-    border-radius: 6px;
-    background-color: #1d4ed8;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-
-/* Predict button hover effect */
-button:hover {
-    background-color: #1e40af;
-}
-
-
-/* Predict button click effect */
-button:active {
-    transform: scale(0.99);
-}
-
-
-/* Prediction result area */
-.result-container {
-    min-height: 100px;
-    margin-top: 25px;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 2px dashed #b8c5d6;
-    border-radius: 8px;
-    background-color: #f8fafc;
+.header-center {
     text-align: center;
 }
 
-
-/* Result heading */
-.result-container h2 {
-    margin-top: 0;
-    color: #334155;
+.header-right {
+    text-align: right;
 }
 
-
-/* Result message */
-.result-container p {
-    margin-bottom: 0;
+/* Main content */
+.main {
+    max-width: 1430px;
+    margin: 42px auto 0;
+    padding: 0 20px;
 }
 
-
-/* Result area after clicking Predict */
-.result-container.active {
-    border: 2px solid #1d4ed8;
-    background-color: #eff6ff;
+h1 {
+    margin: 0 0 54px;
+    text-align: center;
+    font-size: 39px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
+.content {
+    display: grid;
+    grid-template-columns: 670px 1fr;
+    column-gap: 120px;
+    align-items: start;
+}
 
-/* Mobile screen adjustment */
+/* Left side */
+.intro {
+    margin: 0 0 27px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.35;
+    letter-spacing: 0.2px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+select {
+    width: 100%;
+    height: 46px;
+    padding: 0 52px 0 15px;
+    border: 1px solid #4da875;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #292929;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    letter-spacing: 0.2px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #777 50%),
+        linear-gradient(135deg, #777 50%, transparent 50%);
+    background-position:
+        calc(100% - 27px) 18px,
+        calc(100% - 18px) 18px;
+    background-size: 10px 10px, 10px 10px;
+    background-repeat: no-repeat;
+}
+
+select:focus {
+    outline: none;
+    border-color: #2f9860;
+    box-shadow: 0 0 0 2px rgba(77, 168, 117, 0.10);
+}
+
+/* Right side */
+.result-box {
+    min-height: 189px;
+    border: 1px solid #4da875;
+    border-radius: 8px;
+    padding: 32px 30px;
+    text-align: center;
+}
+
+.result-title {
+    margin: 0 0 14px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.result-message {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.45;
+}
+
+.confidence-message {
+    margin: 10px 0 0;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.likely {
+    color: #299447;
+    font-weight: 700;
+}
+
+.not-likely {
+    color: #d43d3d;
+    font-weight: 700;
+}
+
+/* Predict button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 78px;
+}
+
+#predictButton {
+    width: 388px;
+    height: 58px;
+    border-radius: 32px;
+    border: 1px solid #a5aea7;
+    background: #ffffff;
+    color: #9aa19c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 700;
+    cursor: not-allowed;
+    transition: background-color 0.15s ease,
+                color 0.15s ease,
+                border-color 0.15s ease;
+}
+
+#predictButton.active {
+    background: #9be399;
+    border-color: #9be399;
+    color: #292929;
+    cursor: pointer;
+}
+
+#predictButton.active:hover {
+    background: #8bdc89;
+    border-color: #8bdc89;
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+    .header {
+        padding: 0 35px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .left-column {
+        max-width: 670px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .right-column {
+        max-width: 670px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .button-container {
+        margin-top: 45px;
+    }
+}
+
 @media (max-width: 600px) {
-    .container {
-        width: 94%;
-        margin: 20px auto;
-        padding: 20px;
+    .header {
+        height: auto;
+        min-height: 70px;
+        padding: 16px 18px;
+        font-size: 15px;
+    }
+
+    .main {
+        margin-top: 30px;
+        padding: 0 18px;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    .intro {
+        font-size: 19px;
+    }
+
+    label {
+        font-size: 21px;
+    }
+
+    select {
+        font-size: 17px;
+    }
+
+    .result-title {
+        font-size: 27px;
+    }
+
+    .result-message {
+        font-size: 17px;
+    }
+
+    .confidence-message {
+        font-size: 16px;
+    }
+
+    #predictButton {
+        width: 100%;
+        max-width: 388px;
+        font-size: 30px;
     }
 }
